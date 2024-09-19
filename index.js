@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://hasanshanto:hasanshanto@cluster0.dwfgjcr.mongodb.net/facialRecognition', {});
+mongoose.connect(process.env.MONGO_URI, {});
 
 // Define schema for storing face descriptors
 const faceSchema = new mongoose.Schema({
